@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 import sys
 
-sys.path.append('./thrift/gen-py')
+sys.path.append('../thrift/gen-py')
 
 from DemoService import *
 from DemoService.ttypes import *
@@ -28,4 +28,3 @@ print(hello)
 
 # Close connection
 transport.close()
-
