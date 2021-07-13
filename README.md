@@ -1,6 +1,6 @@
 # React Thrift Client Demo
 
-### This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app)  
+### This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app)
 ```
 npx create-react-app react-thrift-client
 ```
@@ -12,7 +12,7 @@ npm install --save-dev @creditkarma/thrift-typescript
 ```
 
 ### Modify package.json
-Add a script in `package.json`:  
+Add a script in `package.json`:
 ```
 "codegen": "thrift-typescript --target thrift-server --sourceDir thrift --outDir src/codegen"
 ```
@@ -23,13 +23,37 @@ The Thrift IDL file locates in the `thrift` folder.
 
 ### Codegen
 ```sh
-$ npm run codegen
+$ ./generate-thrift.sh
 ```
-It will read the IDL in `./thrift` and create Thrift related files in `./src/codegen`  
+It will read the IDL in `./thrift` and create Thrift related files in `./src/codegen` for the client.
+The server files are located in `./thrift/gen-py`
 
-### Start
+### Server setup
+
+```sh
+$ python -m venv venv
+$ . ./venv/bin/activate
+$ pip install -r requirements.txt
+```
+
+Start the server:
+
+```sh
+$ python server.py
+```
+
+### Start the client
 
 ```sh
 $ npm start
 ```
 Visit `localhost:3000`
+
+
+### Run browser
+
+run google-chrome without CORS check.
+
+```sh
+google-chrome-unstable --disable-web-security --user-data-dir="/tmp"
+```
