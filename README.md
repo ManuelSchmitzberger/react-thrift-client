@@ -30,6 +30,8 @@ The server files are located in `./thrift/gen-py`
 
 ### Server setup
 
+* Python
+
 ```sh
 $ python -m venv venv
 $ . ./venv/bin/activate
@@ -41,6 +43,15 @@ Start the server:
 ```sh
 $ python server.py
 ```
+
+* Go
+
+```sh
+$ cd server/go
+$ go install
+$ go run ./server.go
+```
+
 
 ### Start the client
 
