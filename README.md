@@ -56,7 +56,7 @@ $ go run ./server.go
 ### Start the client
 
 ```sh
-$ npm start
+$ yarn start
 ```
 Visit `localhost:3000`
 
